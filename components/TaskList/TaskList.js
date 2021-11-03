@@ -19,9 +19,6 @@ const styles = StyleSheet.create({
     listContainer: {
         marginLeft: 10,
         marginRight: 10,
-        marginBottom: 30,
-        marginTop: 30,
-        backgroundColor: 'grey',
     },
 });
 

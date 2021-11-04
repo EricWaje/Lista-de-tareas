@@ -43,7 +43,7 @@ const AddTask = ({
 
 const styles = StyleSheet.create({
     addContainer: {
-        /* backgroundColor: 'blue', */
+        display: 'flex',
         marginTop: 20,
         padding: 10,
     },
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         padding: 10,
         marginTop: 20,
-        height: 120,
+        height: 80,
     },
     add: {
         alignSelf: 'flex-end',

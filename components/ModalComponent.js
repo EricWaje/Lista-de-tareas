@@ -6,16 +6,16 @@ const ModalComponent = ({ modalVisible, modalOut, taskSelected }) => {
     return (
         <Modal visible={modalVisible} animationType="slide">
             <View style={styles.modalContainer}>
-                <View>
-                    <Text style={{ paddingTop: 100 }}>
-                        {taskSelected.title}
+                <View style={styles.taskContainer}>
+                    <Text style={styles.title}>{taskSelected.title}</Text>
+                    <Text style={styles.description}>
+                        {taskSelected.description}
                     </Text>
-                    <Text>{taskSelected.description}</Text>
                 </View>
                 <AntDesign
                     name="checkcircleo"
-                    size={24}
-                    color="black"
+                    size={70}
+                    color="green"
                     onPress={modalOut}
                 />
             </View>
@@ -29,6 +29,22 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#bcaa99',
+    },
+    taskContainer: {
+        borderWidth: 1,
+        width: '80%',
+        marginBottom: 30,
+        backgroundColor: '#f2f7f2',
+        padding: 20,
+    },
+    title: {
+        fontSize: 19,
+        marginBottom: 10,
+        fontWeight: 'bold',
+    },
+    description: {
+        fontSize: 17,
+        marginBottom: 10,
     },
 });
 

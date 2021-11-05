@@ -12,7 +12,7 @@ const Task = ({ id, title, description, handleRemoveItem, handleEdit }) => {
             <View style={styles.optionsContainer}>
                 <AntDesign
                     name="edit"
-                    size={28}
+                    size={23}
                     color="#181818"
                     style={{ marginRight: 25 }}
                     onPress={() => handleEdit(id)}
@@ -20,7 +20,7 @@ const Task = ({ id, title, description, handleRemoveItem, handleEdit }) => {
                 <AntDesign
                     onPress={() => handleRemoveItem(id)}
                     name="delete"
-                    size={28}
+                    size={23}
                     color="red"
                 />
             </View>
@@ -37,14 +37,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 10,
+        padding: 20,
+        backgroundColor: '#f2f7f2',
     },
     title: {
-        fontSize: 23,
+        fontSize: 19,
         marginBottom: 10,
+        fontWeight: 'bold',
     },
     description: {
-        fontSize: 20,
+        fontSize: 17,
         marginBottom: 10,
     },
     optionsContainer: {

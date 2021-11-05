@@ -80,6 +80,8 @@ const styles = StyleSheet.create({
     containerTitle: {
         display: 'flex',
         alignItems: 'center',
+        backgroundColor: '#bcaa99',
+        padding: 20,
     },
     title: {
         fontSize: 30,

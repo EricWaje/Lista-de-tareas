@@ -48,21 +48,21 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     name: {
-        borderBottomWidth: 1,
-        borderBottomColor: '#181818',
+        borderBottomWidth: 2,
+        borderBottomColor: '#bcaa99',
         fontSize: 17,
         padding: 10,
     },
     description: {
-        borderWidth: 1,
-        borderColor: '#181818',
+        borderWidth: 2,
+        borderColor: '#bcaa99',
         fontSize: 17,
         padding: 10,
         marginTop: 20,
         height: 80,
     },
     add: {
-        alignSelf: 'flex-end',
+        /* alignSelf: 'flex-end', */
         marginTop: 15,
         fontSize: 55,
         color: 'green',

@@ -39,19 +39,19 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 20,
+        padding: 10,
         /* backgroundColor: '#f2f7f2', */
     },
     title: {
         fontSize: 19,
-        marginBottom: 10,
+        marginBottom: 5,
         fontWeight: 'bold',
         color: '#ebf5ee',
     },
     description: {
         color: '#ebf5ee',
         fontSize: 17,
-        marginBottom: 10,
+        marginBottom: 5,
     },
     optionsContainer: {
         display: 'flex',

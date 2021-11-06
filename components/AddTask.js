@@ -12,21 +12,23 @@ const AddTask = ({
 }) => {
     return (
         <View style={styles.addContainer}>
-            <TextInput
-                style={styles.name}
-                maxLength={30}
-                placeholder="Nombre de la tarea"
-                value={task}
-                onChangeText={handleChange}
-            />
-            <TextInput
-                style={styles.description}
-                multiline={true}
-                numberOfLines={3}
-                placeholder="Descripción de la tarea"
-                value={description}
-                onChangeText={handleChangeDescription}
-            />
+            <View style={{ width: '75%' }}>
+                <TextInput
+                    style={styles.name}
+                    maxLength={30}
+                    placeholder="Nombre de la tarea"
+                    value={task}
+                    onChangeText={handleChange}
+                />
+                <TextInput
+                    style={styles.description}
+                    multiline={true}
+                    numberOfLines={3}
+                    placeholder="Descripción de la tarea"
+                    value={description}
+                    onChangeText={handleChangeDescription}
+                />
+            </View>
             <View style={styles.containerAdd}>
                 <Ionicons
                     onPress={
@@ -45,6 +47,9 @@ const AddTask = ({
 const styles = StyleSheet.create({
     addContainer: {
         display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         marginTop: 20,
         padding: 10,
     },
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
         height: 80,
     },
     containerAdd: {
-        width: '13%',
+        width: '16%',
     },
     add: {
         marginTop: 15,

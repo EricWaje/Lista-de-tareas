@@ -8,7 +8,6 @@ export default function App() {
     const [task, setTask] = useState('');
     const [description, setDescription] = useState('');
     const [taskList, setTaskList] = useState([]);
-
     const [taskSelected, setTaskSelected] = useState({});
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -41,8 +40,31 @@ export default function App() {
         setTaskSelected(taskList.find((item) => item.id === id));
     };
 
+    const handleEditItem = (taskSelected) => {
+        const newData = taskList.map((item) => {
+            if (item.id === taskSelected.id) {
+                item.title = task;
+                item.description = description;
+                return item;
+            }
+            return item;
+        });
+        setTaskList(newData);
+        setTask('');
+        setDescription('');
+    };
+
     const modalOut = () => {
+        handleEditItem(taskSelected);
         setModalVisible(false);
+    };
+
+    const validation = () => {
+        alert('Debés completar ambos campos para añadir una tarea');
+    };
+
+    const validationModal = () => {
+        alert('Debés completar ambos campos para editar una tarea');
     };
 
     return (
@@ -56,6 +78,7 @@ export default function App() {
                 handleChangeDescription={handleChangeDescription}
                 handleChange={handleChange}
                 handleAdd={handleAdd}
+                validation={validation}
             />
             <TaskList
                 taskList={taskList}
@@ -66,6 +89,11 @@ export default function App() {
                 modalVisible={modalVisible}
                 taskSelected={taskSelected}
                 modalOut={modalOut}
+                task={task}
+                setTask={setTask}
+                setDescription={setDescription}
+                description={description}
+                validationModal={validationModal}
             />
             <StatusBar barStyle="dark-content" />
         </View>

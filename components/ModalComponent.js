@@ -1,22 +1,50 @@
 import React from 'react';
-import { Modal, Text, View, StyleSheet } from 'react-native';
+import { Modal, Text, View, StyleSheet, TextInput } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-const ModalComponent = ({ modalVisible, modalOut, taskSelected }) => {
+const ModalComponent = ({
+    modalVisible,
+    modalOut,
+    taskSelected,
+    setTask,
+    task,
+    setDescription,
+    description,
+    validationModal,
+}) => {
     return (
         <Modal visible={modalVisible} animationType="slide">
             <View style={styles.modalContainer}>
                 <View style={styles.taskContainer}>
-                    <Text style={styles.title}>{taskSelected.title}</Text>
-                    <Text style={styles.description}>
-                        {taskSelected.description}
-                    </Text>
+                    <TextInput
+                        placeholder={taskSelected.title}
+                        style={styles.title}
+                        editable={true}
+                        multiline={false}
+                        maxLength={30}
+                        value={task}
+                        onChangeText={(text) => setTask(text)}
+                    />
+                    <TextInput
+                        placeholder={taskSelected.description}
+                        style={styles.description}
+                        editable={true}
+                        multiline={false}
+                        value={description}
+                        onChangeText={(description) =>
+                            setDescription(description)
+                        }
+                    />
                 </View>
                 <AntDesign
                     name="checkcircleo"
                     size={70}
                     color="green"
-                    onPress={modalOut}
+                    onPress={
+                        task === '' || description === ''
+                            ? validationModal
+                            : modalOut
+                    }
                 />
             </View>
         </Modal>

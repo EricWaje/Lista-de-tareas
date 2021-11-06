@@ -8,6 +8,7 @@ const AddTask = ({
     description,
     handleChangeDescription,
     handleAdd,
+    validation,
 }) => {
     return (
         <View style={styles.addContainer}>
@@ -26,17 +27,17 @@ const AddTask = ({
                 value={description}
                 onChangeText={handleChangeDescription}
             />
-            {task === '' || description === '' ? (
-                <Text style={styles.validation}>
-                    Debés completar los dos campos para añadir una tarea 😀
-                </Text>
-            ) : (
+            <View style={styles.containerAdd}>
                 <Ionicons
-                    onPress={handleAdd}
+                    onPress={
+                        task === '' || description === ''
+                            ? validation
+                            : handleAdd
+                    }
                     style={styles.add}
                     name="add-circle"
                 />
-            )}
+            </View>
         </View>
     );
 };
@@ -48,18 +49,23 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     name: {
-        borderBottomWidth: 2,
-        borderBottomColor: '#bcaa99',
+        borderWidth: 2,
+        borderColor: '#bcaa99',
         fontSize: 17,
         padding: 10,
+        borderRadius: 10,
     },
     description: {
+        borderRadius: 10,
         borderWidth: 2,
         borderColor: '#bcaa99',
         fontSize: 17,
         padding: 10,
         marginTop: 20,
         height: 80,
+    },
+    containerAdd: {
+        width: '13%',
     },
     add: {
         marginTop: 15,

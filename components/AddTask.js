@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-    Text,
-    TextInput,
-    View,
-    StyleSheet,
-    TouchableOpacity,
-} from 'react-native';
+import { TextInput, View, StyleSheet, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const AddTask = ({
@@ -32,11 +26,17 @@ const AddTask = ({
                 value={description}
                 onChangeText={handleChangeDescription}
             />
-            <Ionicons
-                onPress={handleAdd}
-                style={styles.add}
-                name="add-circle"
-            />
+            {task === '' || description === '' ? (
+                <Text style={styles.validation}>
+                    Debés completar los dos campos para añadir una tarea 😀
+                </Text>
+            ) : (
+                <Ionicons
+                    onPress={handleAdd}
+                    style={styles.add}
+                    name="add-circle"
+                />
+            )}
         </View>
     );
 };
@@ -62,10 +62,15 @@ const styles = StyleSheet.create({
         height: 80,
     },
     add: {
-        /* alignSelf: 'flex-end', */
         marginTop: 15,
         fontSize: 55,
         color: 'green',
+    },
+    validation: {
+        fontSize: 20,
+        marginTop: 15,
+        marginBottom: 10,
+        color: 'black',
     },
 });
 

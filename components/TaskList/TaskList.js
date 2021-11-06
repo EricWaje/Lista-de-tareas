@@ -1,21 +1,27 @@
 import React from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View, Text } from 'react-native';
 import Task from './Task';
 
 const TaskList = ({ taskList, handleRemoveItem, handleEdit }) => {
     return (
         <View style={styles.listContainer}>
-            <FlatList
-                data={taskList}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
-                    <Task
-                        {...item}
-                        handleRemoveItem={handleRemoveItem}
-                        handleEdit={handleEdit}
-                    />
-                )}
-            />
+            {taskList.length === 0 ? (
+                <Text style={styles.text}>
+                    Que esperás para escribir tu primer tarea? 🤟
+                </Text>
+            ) : (
+                <FlatList
+                    data={taskList}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => (
+                        <Task
+                            {...item}
+                            handleRemoveItem={handleRemoveItem}
+                            handleEdit={handleEdit}
+                        />
+                    )}
+                />
+            )}
         </View>
     );
 };
@@ -28,6 +34,13 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         backgroundColor: '#bcaa99',
         borderRadius: 10,
+    },
+    text: {
+        color: 'white',
+        fontSize: 30,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        paddingTop: 80,
     },
 });
 

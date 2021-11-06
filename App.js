@@ -48,7 +48,7 @@ export default function App() {
     return (
         <View style={styles.container}>
             <View style={styles.containerTitle}>
-                <Text style={styles.title}>Lista de Tareas</Text>
+                <Text style={styles.title}>Lista de Tareas 😎</Text>
             </View>
             <AddTask
                 task={task}

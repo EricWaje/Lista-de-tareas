@@ -104,14 +104,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 60,
+        backgroundColor: '#ebf5ee',
     },
     containerTitle: {
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: '#bcaa99',
+        backgroundColor: '#283044',
+
         padding: 20,
     },
     title: {
         fontSize: 30,
+        color: '#ebf5ee',
+        fontWeight: 'bold',
     },
 });

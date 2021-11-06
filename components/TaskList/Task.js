@@ -13,7 +13,7 @@ const Task = ({ id, title, description, handleRemoveItem, handleEdit }) => {
                 <AntDesign
                     name="edit"
                     size={23}
-                    color="#181818"
+                    color="#ebf5ee"
                     style={{ marginRight: 25 }}
                     onPress={() => handleEdit(id)}
                 />
@@ -30,7 +30,9 @@ const Task = ({ id, title, description, handleRemoveItem, handleEdit }) => {
 
 const styles = StyleSheet.create({
     task: {
-        borderWidth: 1,
+        borderWidth: 3,
+        borderColor: '#78a1bb',
+        borderRadius: 10,
         marginTop: 12,
         marginBottom: 12,
         display: 'flex',
@@ -38,14 +40,16 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: '#f2f7f2',
+        /* backgroundColor: '#f2f7f2', */
     },
     title: {
         fontSize: 19,
         marginBottom: 10,
         fontWeight: 'bold',
+        color: '#ebf5ee',
     },
     description: {
+        color: '#ebf5ee',
         fontSize: 17,
         marginBottom: 10,
     },

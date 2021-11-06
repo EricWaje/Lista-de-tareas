@@ -13,10 +13,11 @@ const ModalComponent = ({
     validationModal,
 }) => {
     return (
-        <Modal visible={modalVisible} animationType="slide">
+        <Modal visible={modalVisible} animationType="fade">
             <View style={styles.modalContainer}>
                 <View style={styles.taskContainer}>
                     <TextInput
+                        placeholderTextColor="#ebf5eeaa"
                         placeholder={taskSelected.title}
                         style={styles.title}
                         editable={true}
@@ -26,6 +27,7 @@ const ModalComponent = ({
                         onChangeText={(text) => setTask(text)}
                     />
                     <TextInput
+                        placeholderTextColor="#ebf5eeaa"
                         placeholder={taskSelected.description}
                         style={styles.description}
                         editable={true}
@@ -56,21 +58,24 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#bcaa99',
+        backgroundColor: '#283044',
     },
     taskContainer: {
-        borderWidth: 1,
+        borderWidth: 3,
+        borderColor: '#78a1bb',
         width: '80%',
         marginBottom: 30,
-        backgroundColor: '#f2f7f2',
         padding: 20,
+        borderRadius: 10,
     },
     title: {
+        color: '#ebf5ee',
         fontSize: 19,
         marginBottom: 10,
         fontWeight: 'bold',
     },
     description: {
+        color: '#ebf5ee',
         fontSize: 17,
         marginBottom: 10,
     },
